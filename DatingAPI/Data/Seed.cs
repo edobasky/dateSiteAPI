@@ -29,7 +29,7 @@ namespace DatingAPI.Data
                 context.Users.Add(user);
 
             }
-
+             
             await context.SaveChangesAsync();
         }
     }

@@ -75,3 +75,5 @@ C:\Users\hp\Desktop\Revision API\DatingApp\DatingAPIApp\DatingAPI\bin\Debug\net7
 C:\Users\hp\Desktop\Revision API\DatingApp\DatingAPIApp\DatingAPI\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\hp\Desktop\Revision API\DatingApp\DatingAPIApp\DatingAPI\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\hp\Desktop\Revision API\DatingApp\DatingAPIApp\DatingAPI\bin\Debug\net7.0\Data\UserSeedData.json
+C:\Users\hp\Desktop\Revision API\DatingApp\DatingAPIApp\DatingAPI\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\hp\Desktop\Revision API\DatingApp\DatingAPIApp\DatingAPI\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
