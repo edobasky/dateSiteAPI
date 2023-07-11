@@ -18,7 +18,7 @@ namespace DatingAPI.Controllers
             _context = context;
         }
 
-        [AllowAnonymous]
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Appuser>>> GetUsers()
         {

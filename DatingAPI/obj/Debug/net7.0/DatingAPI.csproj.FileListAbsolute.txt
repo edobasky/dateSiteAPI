@@ -74,3 +74,4 @@ C:\Users\hp\Desktop\Revision API\DatingApp\DatingAPIApp\DatingAPI\bin\Debug\net7
 C:\Users\hp\Desktop\Revision API\DatingApp\DatingAPIApp\DatingAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\hp\Desktop\Revision API\DatingApp\DatingAPIApp\DatingAPI\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\hp\Desktop\Revision API\DatingApp\DatingAPIApp\DatingAPI\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\hp\Desktop\Revision API\DatingApp\DatingAPIApp\DatingAPI\bin\Debug\net7.0\Data\UserSeedData.json
