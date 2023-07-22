@@ -38,10 +38,12 @@ namespace DatingAPI.Data
 
         public async Task<Appuser> GetUserByUsernameAsync(string username)
         {
-            return await _context.Users.FirstOrDefaultAsync(x => x.UserName.Equals(username));
+            return await _context.Users
+                .Include(p => p.Photos)
+                .FirstOrDefaultAsync(x => x.UserName.Equals(username));
         }
 
-        public async Task<IEnumerable<Appuser>> GetUsersAsync()
+        public async Task<IEnumerable<Appuser>> GetUsersAsync() 
         {
              return await _context.Users
                 .Include(p => p.Photos)
