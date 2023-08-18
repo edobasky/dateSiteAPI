@@ -32,12 +32,18 @@ namespace DatingAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<PagedList<membersDto>>> GetUsers([FromQuery]UserParams userParams)
         {
-            /* var users = await _userRepository.GetUsersAsync();
+            var currrentUser = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
 
-             var usersToReturn = _mapper.Map<IEnumerable<membersDto>>(users);*/
+            userParams.CurrentUsername = currrentUser.UserName;
+
+            if (string.IsNullOrEmpty(userParams.Gender))
+            {
+                userParams.Gender = currrentUser.Gender == "male" ? "female" : "male";
+            }
 
             var users = await _userRepository.GetMembersAsync(userParams);
-            Response.AddPaginationHeader(new PaginationHeader(users.CurrentPage, users.TotalCount,users.PageSize, users.TotalPages));
+
+            Response.AddPaginationHeader(new PaginationHeader(users.CurrentPage,users.PageSize, users.TotalCount, users.TotalPages));
 
             return Ok(users);
            

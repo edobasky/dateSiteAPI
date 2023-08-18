@@ -29,11 +29,22 @@ namespace DatingAPI.Data
 
         public async Task<PagedList<membersDto>> GetMembersAsync(UserParams userParams)
         {
-            var query = _context.Users
-                .ProjectTo<membersDto>(_mapper.ConfigurationProvider)
-                .AsNoTracking();
+            var query = _context.Users.AsQueryable();
+            query = query.Where(u => u.UserName != userParams.CurrentUsername);
 
-            return await PagedList<membersDto>.CreateAsync(query,userParams.PageNumber,userParams.PageSize);
+            query = query.Where(u => u.Gender == userParams.Gender);
+
+            var minDob = DateOnly.FromDateTime(DateTime.Today.AddYears(-userParams.MaxAge - 1));
+
+            var maxDob = DateOnly.FromDateTime(DateTime.Today.AddYears(-userParams.MinAge));
+
+            query = query.Where(u => u.DateOfBirth >= minDob && u.DateOfBirth <= maxDob);
+                
+
+            return await PagedList<membersDto>.CreateAsync(
+                query.AsNoTracking().ProjectTo<membersDto>(_mapper.ConfigurationProvider),
+                userParams.PageNumber,
+                userParams.PageSize);
         }
 
         public async Task<Appuser> GetUserByIdAsync(int id)
