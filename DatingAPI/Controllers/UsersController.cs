@@ -13,7 +13,9 @@ using System.Security.Claims;
 
 namespace DatingAPI.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class UsersController : ControllerBase
     {
@@ -28,7 +30,7 @@ namespace DatingAPI.Controllers
             _photoService = photoService;
         }
 
-        [Authorize]
+        
         [HttpGet]
         public async Task<ActionResult<PagedList<membersDto>>> GetUsers([FromQuery]UserParams userParams)
         {
